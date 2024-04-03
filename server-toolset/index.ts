@@ -1,5 +1,6 @@
 import express, { Express, Request, Response, Application } from 'express';
 import dotenv from 'dotenv';
+import myRoute from "./src/routes/myRoute";
 
 //For env File 
 dotenv.config();
@@ -7,9 +8,11 @@ dotenv.config();
 const app: Application = express();
 const port = process.env.PORT || 8000;
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to Express & TypeScript Server');
-});
+// Middlewares 
+app.use(express.json());
+
+// Routes will be written here 
+app.use('/', myRoute);
 
 app.listen(port, () => {
     console.log(`Server is Fire at http://localhost:${port}`);
