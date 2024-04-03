@@ -26,3 +26,7 @@ yarn-error.log*
 
 #### Server ####
 server-toolset/node_modules
+
+#production
+server-toolset/dist
+
