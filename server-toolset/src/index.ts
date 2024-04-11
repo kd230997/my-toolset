@@ -1,19 +1,21 @@
-import express, { Express, Request, Response, Application } from 'express';
-import dotenv from 'dotenv';
+import express, { Application } from "express";
+import dotenv from "dotenv";
+import { VerifyDiscordRequest } from "./services/utils";
 import myRoute from "./routes/myRoute";
 
-//For env File 
+//For env File
 dotenv.config();
 
 const app: Application = express();
 const port = process.env.PORT || 8000;
 
-// Middlewares 
+// Middlewares
 app.use(express.json());
+app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 
-// Routes will be written here 
-app.use('/', myRoute);
+// Routes will be written here
+app.use("/", myRoute);
 
 app.listen(port, () => {
-    console.log(`Server is Fire at http://localhost:${port}`);
+  console.log(`Server is Fire at http://localhost:${port}`);
 });
