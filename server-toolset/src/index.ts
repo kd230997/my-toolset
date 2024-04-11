@@ -1,13 +1,13 @@
 import express, { Application } from "express";
 import dotenv from "dotenv";
-import { VerifyDiscordRequest } from "./services/utils";
+import { VerifyDiscordRequest } from "./services/discordServices";
 import myRoute from "./routes/myRoute";
 
 //For env File
 dotenv.config();
 
 const app: Application = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 // Middlewares
 app.use(express.json());

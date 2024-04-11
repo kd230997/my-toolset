@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { InstallGlobalCommands } from "../services/utils";
+import { InstallGlobalCommands } from "../services/discordServices";
 
 dotenv.config();
 

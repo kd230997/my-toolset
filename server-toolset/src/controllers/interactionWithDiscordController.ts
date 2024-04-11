@@ -6,7 +6,7 @@ import {
   MessageComponentTypes,
   ButtonStyleTypes,
 } from "discord-interactions";
-import { getRandomEmoji, DiscordRequest } from "../services/utils";
+import { getRandomEmoji, DiscordRequest } from "../services/discordServices";
 
 const interactionMethod = async (req: any, res: any) => {
   const { type } = req;
