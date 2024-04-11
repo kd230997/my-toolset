@@ -1,6 +1,6 @@
 import express, { Express, Request, Response, Application } from 'express';
 import dotenv from 'dotenv';
-import myRoute from "./src/routes/myRoute";
+import myRoute from "./routes/myRoute";
 
 //For env File 
 dotenv.config();
