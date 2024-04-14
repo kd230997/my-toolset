@@ -26,7 +26,7 @@ yarn-error.log*
 
 #### Server ####
 server-toolset/node_modules
-server-toolset/.env
+server-toolset/src/.env
 #production
 server-toolset/dist
 
