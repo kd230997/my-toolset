@@ -1,8 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+node_modules/
 
-client-toolset/node_modules
+client-toolset/node_modules/*
 client-toolset/.pnp
 .pnp.js
 
@@ -29,4 +30,3 @@ server-toolset/node_modules
 server-toolset/.env
 #production
 server-toolset/dist
-
