@@ -1,10 +1,14 @@
 export class MenuItem {
-  icon: JSX.Element;
+  iconComponent: JSX.Element;
   title: string;
+  linkable?: boolean;
+  linkURL?: string;
 
-  constructor(icon: JSX.Element, title: string) {
-    this.icon = icon;
+  constructor(iconComponent: JSX.Element, title: string, linkable: boolean = false, linkURL: string) {
+    this.iconComponent = iconComponent;
     this.title = title;
+    this.linkable = linkable;
+    this.linkURL = linkURL;
   }
 }
 

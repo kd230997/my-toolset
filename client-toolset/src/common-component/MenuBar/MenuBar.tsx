@@ -1,17 +1,34 @@
+import { Link } from "react-router-dom";
 import { MenuItem, SectionMenu } from "../../models/Menu";
 
-const MenuItemComponent = ({ title, IconComponent }: any) => (
-  <li className="px-2 py-3 hover:bg-blue-500 hover:rounded-md hover:text-white text-gray-400 flex">
-    <IconComponent /> - {title}
-  </li>
-);
+const renderMenuItemComponent = (menuItem: MenuItem) => {
+  if (menuItem.linkable) {
+    return (
+      <Link to={`${menuItem?.linkURL || ""}`}>
+        <li
+          className={`border-l-2 px-6 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}
+        >
+          {menuItem.iconComponent} {menuItem.title}
+        </li>
+      </Link>
+    );
+  }
 
-const renderSection = (sectionItem : SectionMenu) => (
+  return (
+    <li className={`border-l-2 px-6 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}>
+      {menuItem.iconComponent} {menuItem.title}
+    </li>
+  );
+};
+
+const renderSection = (sectionItem: SectionMenu) => (
   <div className="pt-4">
-    <h1 className="py-3 px-3 text-gray-300">{sectionItem.title}</h1>
-    {sectionItem?.listItems?.map((item: MenuItem) => (
-      <MenuItemComponent title={item.title} IconComponent={item.icon} />
-    ))}
+    <h1 className="py-3 text-primary-text-dark font-bold font-sans">
+      {sectionItem.title}
+    </h1>
+    {sectionItem?.listItems?.map((menuItem: MenuItem) =>
+      renderMenuItemComponent(menuItem)
+    )}
   </div>
 );
 
