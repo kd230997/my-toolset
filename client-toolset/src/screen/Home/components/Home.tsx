@@ -39,14 +39,14 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col h-svh bg-small-gray bg-primary-content font-sans">
-        <TopBar className="max-w-full h-1/6 bg-primary-light" />
-        <div className="flex-none flex flex-row h-5/6">
+      <div className="flex flex-col min-h-screen bg-primary-100 font-sans">
+        <TopBar className="bg-primary-200 shadow-md shadow-primary-200" />
+        <div className="flex flex-row grow">
           <MenuBar
-            className="min-h-full h-fit w-1/6 bg-primary-lighter"
+            className="bg-primary-100 border-primary-400/[.3]"
             items={menu}
           />
-          <MainContent className="w-5/6 h-full" ContentComponent={Outlet} />
+          <MainContent className="w-5/6 min-h-full" ContentComponent={Outlet} />
         </div>
       </div>
     </>

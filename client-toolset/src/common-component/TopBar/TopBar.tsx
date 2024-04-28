@@ -1,6 +1,6 @@
 const TopBar = ({ className }: any) => {
   return (
-    <div className={`${className} px-5 py-7 flex flex-row justify-center`}>
+    <div className={`${className} max-w-full flex justify-center py-4 z-10`}>
       <div>My Porfolio</div>
     </div>
   );
