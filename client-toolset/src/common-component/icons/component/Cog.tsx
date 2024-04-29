@@ -1,13 +1,13 @@
 import React from "react";
 
-const Cog = () => {
+const Cog = ({ className }: any) => {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 px-1"
+      className={`${className || "w-6 h-6 px-1"}`}
     >
       <path
         strokeLinecap="round"

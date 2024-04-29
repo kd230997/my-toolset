@@ -9,3 +9,6 @@ export { default as ComputerDesktop } from "./component/ComputerDesktop";
 export { default as FourSquare } from "./component/FourSquare";
 export { default as CreditCard } from "./component/CreditCard";
 export { default as Calendar } from "./component/Calendar";
+export { default as MagnifyGlass } from "./component/MagnifyGlass";
+export { default as Bars } from "./component/Bars";
+export { default as Bell } from "./component/Bell";

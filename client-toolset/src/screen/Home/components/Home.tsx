@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-primary-100 font-sans">
-        <TopBar className="bg-primary-200 shadow-md shadow-primary-200" />
+        <TopBar className="bg-primary-200 shadow-sm shadow-primary-200 border-b border-primary-400/30" />
         <div className="flex flex-row grow">
           <MenuBar
             className="bg-primary-100 border-primary-400/[.3]"
