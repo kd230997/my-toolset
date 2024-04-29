@@ -15,7 +15,7 @@ const TopBar = ({ className }: any) => {
         <Bars className="cursor-pointer w-8 h-8 px-1 fill-primary-text-lighter" />
         <p className="font-bold subpixel-antialiased text-2xl/7">MyPortfolio</p>
       </div>
-      <div className="basis-6/12 pl-3 mt-2">
+      <div className="basis-6/12 pl-3 mt-1">
         <Input
           value={searchValue}
           onChange={handleSearchChange}
@@ -26,11 +26,12 @@ const TopBar = ({ className }: any) => {
         />
       </div>
       <div className="basis-4/12 flex justify-end py-2 gap-5 px-4">
-        <div>
-          <Bell className="w-8 h-8 fill-primary-text-light" />
+        <div className="cursor-pointer relative mt-1">
+          <p className="absolute top-[-5px] right-0 text-xs w-4 h-4 p text-center rounded-full bg-primary-red text-primary-content font-bold">1</p>
+          <Bell className=" w-7 h-7 fill-primary-text-light" />
         </div>
         <div>
-          <p className="font-medium subpixel-antialiased text-lgsm/7">
+          <p className="cursor-pointer font-medium subpixel-antialiased text-base">
             my profile
           </p>
         </div>

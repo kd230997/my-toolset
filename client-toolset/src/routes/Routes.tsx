@@ -1,12 +1,19 @@
-import { RouteObject } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
 import ROUTES_URL from "../configs/routeConfigs";
 import { Home, ToolList } from "../screen";
 
 const listRoutes: Array<RouteObject> = [
+  { path: "*", element: <Navigate to="home" replace={true} /> },
   {
-    path: "/",
+    path: "home",
     element: <Home />,
     children: [
+      {
+        index: true,
+        element: (
+          <Navigate to={`${ROUTES_URL.TOOL_LIST}`} replace={true} />
+        ),
+      },
       {
         path: ROUTES_URL.HELLO_WORLD,
         element: <p>Hello World!</p>,
@@ -17,7 +24,7 @@ const listRoutes: Array<RouteObject> = [
       },
       {
         path: ROUTES_URL.TOOL_LIST,
-        element: <ToolList />,
+        Component: ToolList,
       },
       {
         path: ROUTES_URL.DISCORD_ADMIN,
