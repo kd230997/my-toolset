@@ -1,6 +1,7 @@
-const Bars = ({ className }: any) => {
+const Bars = ({ className, onClick }: any) => {
   return (
     <svg
+      onClick={onClick}
       strokeWidth={1.5}
       stroke="currentColor"
       viewBox="0 0 448 512"

@@ -28,7 +28,7 @@ export default function Input({
         className={`cursor-pointer absolute top-0.5 w-8 h-9 px-2 ${iconColor}`}
       />
       <input
-        className={`${className} w-full rounded-md pl-9`}
+        className={`${className} w-full rounded-md pl-9 caret-primary-red`}
         type="text"
         value={inputValueState}
         placeholder={placeHolder}
