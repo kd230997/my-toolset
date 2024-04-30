@@ -3,9 +3,9 @@ import ROUTES_URL from "../configs/routeConfigs";
 import { Home, ToolList } from "../screen";
 
 const listRoutes: Array<RouteObject> = [
-  { path: "*", element: <Navigate to="home" replace={true} /> },
+  { path: "*", element: <Navigate to={ROUTES_URL.HOME} replace={true} /> },
   {
-    path: "home",
+    path: ROUTES_URL.HOME,
     element: <Home />,
     children: [
       {
