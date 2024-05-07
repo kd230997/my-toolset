@@ -12,6 +12,7 @@ client-toolset/coverage
 
 # production
 client-toolset/build
+client-toolset/dist
 
 # misc
 .DS_Store
