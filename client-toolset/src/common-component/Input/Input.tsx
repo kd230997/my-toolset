@@ -8,10 +8,11 @@ export interface InputProps {
   iconColor?: string;
   onChange?: (value: any) => void;
   IconComponent?: ComponentType<any>;
+  isShowIcon?: boolean;
 }
 
 export default function Input({
-  value,
+  value = "",
   className,
   placeHolder,
   iconColor = "text-primary-400",
@@ -19,16 +20,23 @@ export default function Input({
     return;
   },
   IconComponent = Cog,
+  isShowIcon = false,
 }: InputProps) {
   const [inputValueState, setInputValue] = useState(value);
 
   return (
     <div className="relative">
-      <IconComponent
-        className={`cursor-pointer absolute top-0.5 w-8 h-9 px-2 ${iconColor}`}
-      />
+      {isShowIcon ? (
+        <IconComponent
+          className={`cursor-pointer absolute top-0.5 w-8 h-9 px-2 ${iconColor}`}
+        />
+      ) : (
+        <></>
+      )}
       <input
-        className={`${className} w-full rounded-md pl-9 caret-primary-red p-2`}
+        className={`${className} ${
+          isShowIcon ? "pl-9" : ""
+        } w-full rounded-md shadow-md p-2`}
         type="text"
         value={inputValueState}
         placeholder={placeHolder}

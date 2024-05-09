@@ -1,36 +1,78 @@
+import { BoardCard, Input } from "../../../common-component";
+import { BoardCardProps } from "../../../models/BoardCard";
+
 const ToolList = ({ className }: any) => {
+  const mockCards: Array<BoardCardProps> = [
+    {
+      title: "Hello Duy",
+      content: <BoardCard title="Test Card in Card" content={`Card here!`} />,
+      dateCreated: new Date(),
+      customClass: "",
+      owner: "DuyNK12",
+    },
+    {
+      title: "Hello Duy",
+      content: <Input />,
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: (
+        <>
+          <BoardCard title="Test Card in Card" content={`Card here!`} />
+          <br />
+          <BoardCard title="Test Card in Card" content={`Card here!`} />
+        </>
+      ),
+      dateCreated: new Date(),
+      customClass: "",
+      owner: "DuyNK12",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+    {
+      title: "Hello Duy",
+      content: "This is your first Card",
+      dateCreated: new Date(),
+      customClass: "",
+    },
+  ];
   return (
     <div className={`${className} px-5 py-7 flex flex-col`}>
-      <div className="">
-        <h1>My Tools</h1>
-      </div>
-      <div>
-        <table className="table-fixed border-collapse border rounded-e-md border-primary-light text-left">
-          <thead>
-            <tr>
-              <th className="px-2 py-2 bg-primary-100 border border-primary-light">Song</th>
-              <th className="px-2 py-2 bg-primary-100 border border-primary-light">Artist</th>
-              <th className="px-2 py-2 bg-primary-100 border border-primary-light">Year</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">Malcolm Lockyer</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">1961</td>
-            </tr>
-            <tr>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">Witchy Woman</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">The Eagles</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">1972</td>
-            </tr>
-            <tr>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">Shining Star</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">Earth, Wind, and Fire</td>
-              <td className="px-2 py-2 bg-primary-100 border border-primary-light">1975</td>
-            </tr>
-          </tbody>
-        </table>
+      <h5 className="font-bold">My Workspace</h5>
+      <div className="pt-3 max-w-full h-fit gap-16 flex flex-row flex-wrap basis">
+        {mockCards.map((item: any, index: number) => (
+          <BoardCard {...item} key={index.toString()} />
+        ))}
       </div>
     </div>
   );

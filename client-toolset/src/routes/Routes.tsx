@@ -10,7 +10,7 @@ const listRoutes: Array<RouteObject> = [
     children: [
       {
         index: true,
-        element: <Navigate to={`${ROUTES_URL.TOOL_LIST}`} replace={true} />,
+        element: <Navigate to={`${ROUTES_URL.WORKSPACE}`} replace={true} />,
       },
       {
         path: ROUTES_URL.HELLO_WORLD,

@@ -38,7 +38,7 @@ const renderSection = (sectionItem: SectionMenu, index: string) => (
 
 const MenuBar = ({ className, items }: any) => {
   return (
-    <div className={`${className} px-2 w-1/6 min-h-full border-r z-0`}>
+    <div className={`${className} px-2 min-w-48 min-h-full border-r z-0`}>
       {items.map((element: SectionMenu, index: number) =>
         renderSection(element, index.toString())
       )}
