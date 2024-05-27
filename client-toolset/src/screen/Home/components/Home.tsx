@@ -47,16 +47,16 @@ export default function Home() {
           toggleMenuHandler={() => {
             setHiddenMenu(!hiddenMenu);
           }}
-          className="bg-primary-200 shadow-sm shadow-primary-200 border-b border-primary-400/30"
+          className="bg-primary-200 shadow-sm shadow-primary-200 border-b border-primary-400/30 w-screen"
         />
         <div className="flex flex-row grow">
           <MenuBar
             className={`${
               hiddenMenu ? "hidden " : ""
-            }bg-primary-100 border-primary-400/[.3]`}
+            }bg-primary-100 border-primary-400/[.3] basis-1/6 min-h-full`}
             items={menu}
           />
-          <MainContent className="min-h-full grow" ContentComponent={Outlet} />
+          <MainContent className="min-h-full grow basis-5/6" ContentComponent={Outlet} />
         </div>
       </div>
     </>

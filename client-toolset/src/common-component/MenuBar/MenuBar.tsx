@@ -7,7 +7,7 @@ const renderMenuItemComponent = (menuItem: MenuItem, id: string) => {
       <Link id={id} key={id} to={`${menuItem?.linkURL || ""}`}>
         <li
           id={id}
-          className={`border-l-2 px-6 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}
+          className={`border-l-2 px-3 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}
         >
           {menuItem.iconComponent} {menuItem.title}
         </li>
@@ -18,7 +18,7 @@ const renderMenuItemComponent = (menuItem: MenuItem, id: string) => {
   return (
     <li
       id={id}
-      className={`border-l-2 px-6 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}
+      className={`border-l-2 px-3 py-1 hover:bg-blue-500 hover:text-primary-text-lighter text-primary-text-light flex`}
     >
       {menuItem.iconComponent} {menuItem.title}
     </li>
@@ -38,7 +38,7 @@ const renderSection = (sectionItem: SectionMenu, index: string) => (
 
 const MenuBar = ({ className, items }: any) => {
   return (
-    <div className={`${className} px-2 min-w-48 min-h-full border-r z-0`}>
+    <div className={`${className} px-2 border-r z-0`}>
       {items.map((element: SectionMenu, index: number) =>
         renderSection(element, index.toString())
       )}

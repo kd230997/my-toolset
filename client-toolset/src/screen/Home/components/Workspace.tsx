@@ -3,7 +3,7 @@ import { BoardCardProps } from "../../../models/BoardCard";
 
 const renderBoardCard = (mockCards: Array<BoardCardProps>) => {
   return mockCards.map((item: any, index: number) => (
-    <BoardCard {...item} key={index.toString()} />
+    <BoardCard className="basis-1/4" {...item} key={index.toString()} />
   ));
 };
 
@@ -12,7 +12,7 @@ const mockBoardCard: Array<BoardCardProps> = [
     // title: "To do",
     content: "Some content of board cards.",
     dateCreated: new Date(),
-  }  
+  },
 ];
 
 const Workspace = ({ className }: any) => {

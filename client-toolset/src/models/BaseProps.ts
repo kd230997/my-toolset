@@ -1,5 +1,5 @@
 export interface BaseProps {
-  customClass?: string;
+  className?: string;
   eventClick?: any;
   id?: string;
 }
