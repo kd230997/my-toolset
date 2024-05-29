@@ -17,7 +17,7 @@ const mockBoardCard: Array<BoardCardProps> = [
 
 const Workspace = ({ className }: any) => {
   return (
-    <div className={`${className} px-5 py-7 flex flex-col`}>
+    <div className={`${className || ""} px-5 py-7 flex flex-col`}>
       <h5 className="font-bold">My Workspace</h5>
       <div className="pt-3 max-w-full h-fit gap-16 flex flex-row flex-wrap basis">
         {renderBoardCard(mockBoardCard)}

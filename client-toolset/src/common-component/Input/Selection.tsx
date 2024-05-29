@@ -1,27 +1,33 @@
 import { ChangeEvent, ComponentType, useState } from "react";
 import { Cog } from "../icons";
 
-export interface InputProps {
+export interface TextAreaProps {
   value?: string;
   placeHolder?: string;
   className?: string;
   iconColor?: string;
+  rows?: number;
+  cols?: number;
   onChange?: (value: any) => void;
   IconComponent?: ComponentType<any>;
   isShowIcon?: boolean;
+  readOnly?: boolean;
 }
 
-export default function Input({
+export default function TextArea({
   value = "",
   className,
   placeHolder,
   iconColor = "text-primary-400",
   onChange = (value) => {
-    return;
+    return value;
   },
   IconComponent = Cog,
   isShowIcon = false,
-}: InputProps) {
+  rows = 4,
+  cols = 50,
+  readOnly = false,
+}: TextAreaProps) {
   const [inputValueState, setInputValue] = useState(value);
 
   return (
@@ -33,14 +39,16 @@ export default function Input({
       ) : (
         <></>
       )}
-      <input
+      <textarea
         className={`${
           isShowIcon ? "pl-9" : ""
         } w-full rounded-md shadow-md p-2`}
-        type="text"
         value={inputValueState}
         placeholder={placeHolder}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => {
+        rows={rows}
+        cols={cols}
+        readOnly={readOnly}
+        onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
           setInputValue(event.target.value);
           onChange(event.target.value);
         }}
